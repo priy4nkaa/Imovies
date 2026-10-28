@@ -1,0 +1,76 @@
+body {
+  background-color: #0f172a;
+  color: #f8fafc;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.navbar {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.movie-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+}
+
+.movie-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+.screen-indicator {
+  height: 12px;
+  background: linear-gradient(to bottom, #38bdf8, #0284c7);
+  border-radius: 50% 50% 0 0;
+  box-shadow: 0 6px 12px rgba(56, 189, 248, 0.3);
+  margin-bottom: 2rem;
+}
+
+.seat-btn {
+  width: 38px;
+  height: 38px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  margin: 3px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.seat-available {
+  background-color: #334155;
+  color: #f1f5f9;
+  border: 1px solid #475569;
+}
+
+.seat-available:hover {
+  background-color: #0284c7;
+  color: #fff;
+  border-color: #38bdf8;
+}
+
+.seat-selected {
+  background-color: #22c55e !important;
+  color: #fff !important;
+  border: 1px solid #16a34a !important;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+}
+
+.seat-booked {
+  background-color: #ef4444 !important;
+  color: #fff !important;
+  border: 1px solid #dc2626 !important;
+  cursor: not-allowed !important;
+  opacity: 0.6;
+}
+
+.card {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
