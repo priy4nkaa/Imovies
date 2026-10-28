@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const path = require('path');
 
 dotenv.config();
 
@@ -29,6 +30,14 @@ app.use('/api/bookings', bookingRoutes);
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', service: 'imovies-api' });
 });
+
+// Serve frontend build in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/dist')));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../client/dist', 'index.html'));
+  });
+}
 
 // 404 Handler
 app.use((req, res) => {
